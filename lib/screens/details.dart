@@ -22,13 +22,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Expanded(
-              flex: 2,
-              child: Padding(
+
+
+             Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Hero(
                   tag: widget.data.imageName,
                   child: Container(
+                    height: 200,
+
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30),
@@ -36,7 +38,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             image: AssetImage(
                               widget.data.imageName,
                             ),
-                            fit: BoxFit.fill),
+                            fit: BoxFit.fill,
+
+                        ),
                         boxShadow: const [
                           BoxShadow(
                               offset: Offset(0, 4),
@@ -45,28 +49,32 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ]),
                   ),
                 ),
-              )),
+              ),
+       Row(
+         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+         children :<Widget> [
 
        Text(
                 "Price \$${widget.data.price}",
                 style: const TextStyle(
                     color: Colors.black54,
-                    fontSize: 24,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
           Text(
             widget.data.title,
             style: const TextStyle(
                 color: Colors.black87,
-                fontSize: 25,
+                fontSize: 17,
                 fontWeight: FontWeight.bold),
           ),
 
 
+      ]
 
 
-
-        ],
+       )],
       ),
     );
   }
