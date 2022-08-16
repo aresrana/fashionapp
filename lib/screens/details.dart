@@ -22,18 +22,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: Text(
-              widget.data.title,
-              style: const TextStyle(
-                  color: Colors.black87,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
           Expanded(
-              flex: 3,
+              flex: 2,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Hero(
@@ -56,19 +46,26 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
               )),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text(
+
+       Text(
                 "Price \$${widget.data.price}",
                 style: const TextStyle(
                     color: Colors.black54,
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
-            ),
+          Text(
+            widget.data.title,
+            style: const TextStyle(
+                color: Colors.black87,
+                fontSize: 25,
+                fontWeight: FontWeight.bold),
           ),
+
+
+
+
+
         ],
       ),
     );
